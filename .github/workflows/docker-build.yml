@@ -24,14 +24,6 @@ jobs:
         run: |
           jf docker build -t pet-clinic .
           jf docker push pet-clinic
-
-        - name: Scan image
-        env:
-          IMAGE_NAME: simonanderson.jfrog.io/pet-clinic-docker/jfrog-docker-example-image:${{ github.run_number }}
-        run: |
-          jf docker build -t pet-clinic .
-          jf docker push pet-clinic
-
           
       - name: Publish Build info With JFrog CLI
         env:
