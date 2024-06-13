@@ -1,10 +1,12 @@
 # Petclinic + Artifactory + Xray + Docker
 
 
-## Step 1: Check compilation
+Each time the code is commited to the GitHub repository, a GitHub action (referenced in docker-build.yaml) will run what's written in the Dockerfile.
 
-This uses the maven-build.yml file to build the package each time a pull-request or commit to the "main" branch is made. The command run is `mvnw -B package` and will be successful if the build completes without error.
+In this file Maven dependancies are resolved with the command "./mvnw dependency:resolve". 
 
+A maven build of the package is made and pushed to the image.
 
+The image is then pushed to a Docker repostiory hosted on Artifactory.
 
-docker build --tag petclinic-app .
+Adding `jf xr curl -XGET api/v1/release_bundle_v2_versions` to the github action was attempted to get the data back, but this is still work in progress.
