@@ -13,7 +13,7 @@ Adding `jf xr curl -XGET api/v1/release_bundle_v2_versions` to the github action
 
 Once this is done, run the following command to test the application:
 
-`docker run -p 8080:8080 simonanderson.jfrog.io/pet-clinic-docker/pet-clinic-image:11`
+`docker run -p 8080:8080 <JFROG_ID>.jfrog.io/pet-clinic-docker/pet-clinic-image:11`
 
 The tag is based on the image number - which is viewable from the "Actions" sub-menu in GitHub. 
 
