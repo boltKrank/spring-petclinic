@@ -10,3 +10,8 @@ A maven build of the package is made and pushed to the image.
 The image is then pushed to a Docker repostiory hosted on Artifactory.
 
 Adding `jf xr curl -XGET api/v1/release_bundle_v2_versions` to the github action was attempted to get the data back, but this is still work in progress.
+
+Once this is done, run the following command to test the application:
+
+`docker pull simonanderson.jfrog.io/pet-clinic-docker/<DOCKER_IMAGE>:<DOCKER_TAG>`
+
